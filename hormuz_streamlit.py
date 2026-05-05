@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-# 페이지 설정 (웹 브라우저 탭에 표시될 이름)
+# Page configuration
 st.set_page_config(page_title="Hormuz Strait Tracker", page_icon="🚢")
 
 def display_hormuz_summary():
@@ -54,7 +54,7 @@ def display_hormuz_summary():
 
             with st.expander(f"📅 Week: {week} ({start_date} ~ {end_date})"):
                 st.write(f"**Weekly Total: {int(weekly_sum)} vessels**")
-                # 테이블 형식으로 데이터 표시
+                # Table display
                 st.dataframe(week_data[['date', 'n_total']], use_container_width=True)
                 
     except Exception as e:
