@@ -1,10 +1,3 @@
----
-title: Hormuz Transit Summary
-description: "An interactive Streamlit app that fetches and summarizes the Strait of Hormuz transit data over the last 4 weeks."
-date: "2026-05-05"
-published: true
----
-
 A Python-based tool that tracks and summarizes maritime traffic through the Strait of Hormuz. It utilizes the UN Global Platform's Daily Chokepoints API to provide actionable insights into weekly vessel movements.
 
 ### 🚀 Interactive App
