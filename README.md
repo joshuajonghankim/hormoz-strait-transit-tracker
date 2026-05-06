@@ -3,7 +3,7 @@ A Python-based tool that tracks and summarizes maritime traffic through the Stra
 ### 🚀 Interactive App
 
 > **Note for GitHub viewers:** The interactive iframe below may not render on GitHub. You can access the live app directly here: [Strait of Hormuz Transit Tracker](https://hormoz-strait-transit-tracker-mgveuu9c3itb5fwylswter.streamlit.app/)
-
+<!-- 
 <iframe
   src="https://hormoz-strait-transit-tracker-mgveuu9c3itb5fwylswter.streamlit.app/?embed=true"
   width="100%"
@@ -14,6 +14,7 @@ A Python-based tool that tracks and summarizes maritime traffic through the Stra
     backgroundColor: "transparent",
   }}
 ></iframe>
+-->
 
 ### 🚀 Features
 
@@ -50,9 +51,12 @@ A Python-based tool that tracks and summarizes maritime traffic through the Stra
 
 > **Note:** You can also view the full source code directly on GitHub.
 
+<!--
 <iframe
   src="https://emgithub.com/iframe.html?target=https://github.com/joshuajonghankim/hormoz-strait-transit-tracker/blob/main/hormuz.py&style=github-dark&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"
   width="100%"
   height="600"
   style={{ border: "none", borderRadius: "8px" }}
 ></iframe>
+-->
+
