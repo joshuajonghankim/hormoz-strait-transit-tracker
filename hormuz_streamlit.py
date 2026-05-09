@@ -13,7 +13,7 @@ def display_hormuz_summary():
         'where': "portid = 'chokepoint6'", 
         'outFields': 'date, n_total', 
         'orderByFields': 'date DESC',
-        'resultRecordCount': 100,
+        'resultRecordCount': 200,
         'f': 'json'
     }
     
@@ -38,12 +38,12 @@ def display_hormuz_summary():
         df['date'] = pd.to_datetime(df['date'], unit='ms').dt.date
         df['week_group'] = df.apply(lambda x: x['date'].strftime('%G-W%V'), axis=1)
 
-        # 3. Filter for only the last 4 unique weeks
-        unique_weeks = sorted(df['week_group'].unique(), reverse=True)[:4]
+        # 3. Filter for only the last 10 unique weeks
+        unique_weeks = sorted(df['week_group'].unique(), reverse=True)[:10]
 
         # 4. Streamlit UI Layout
         st.divider()
-        st.subheader("📊 Last 4 Weeks Summary")
+        st.subheader("📊 Last 10 Weeks Summary")
 
         for week in unique_weeks:
             week_data = df[df['week_group'] == week].sort_values(by='date', ascending=False)

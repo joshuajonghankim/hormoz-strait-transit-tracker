@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 
-def display_hormuz_4_weeks_summary():
+def display_hormuz_10_weeks_summary():
     # 1. API Configuration
     base_url = "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     
@@ -10,7 +10,7 @@ def display_hormuz_4_weeks_summary():
         'where': "portid = 'chokepoint6'", 
         'outFields': 'date, n_total', 
         'orderByFields': 'date DESC',
-        'resultRecordCount': 100, # Sufficient to get at least 4 weeks
+        'resultRecordCount': 200, # Sufficient to get at least 10 weeks
         'f': 'json'
     }
     
@@ -35,11 +35,11 @@ def display_hormuz_4_weeks_summary():
         df['week_group'] = df.apply(lambda x: x['date'].strftime('%G-W%V'), axis=1)
 
         print("\n" + "="*45)
-        print("📊 Strait of Hormuz: Last 4 Weeks Summary")
+        print("📊 Strait of Hormuz: Last 10 Weeks Summary")
         print("="*45)
 
-        # 4. Filter for only the last 4 unique weeks
-        unique_weeks = sorted(df['week_group'].unique(), reverse=True)[:4]
+        # 4. Filter for only the last 10 unique weeks
+        unique_weeks = sorted(df['week_group'].unique(), reverse=True)[:10]
 
         for week in unique_weeks:
             week_data = df[df['week_group'] == week].sort_values(by='date', ascending=False)
@@ -60,4 +60,4 @@ def display_hormuz_4_weeks_summary():
         print(f"⚠️ Error occurred: {e}")
 
 if __name__ == "__main__":
-    display_hormuz_4_weeks_summary()
+    display_hormuz_10_weeks_summary()
